@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Works — Fumiya Taguchi</title>
+<meta name="description" content="タグチフミヤ(Fumiya Taguchi)の作品・実績一覧。作曲、編曲、ライブサポートなど。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Sacramento&family=Permanent+Marker&family=Inter:wght@300;400;500;600&family=Zen+Maru+Gothic:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎸</text></svg>">
+<style>
+  :root{
+    --paper:#F4EFE4;
+    --paper-2:#FFFFFF;
+    --ink:#2B2823;
+    --ink-soft:#8C8576;
+    --sage-deep:#94A37D;
+    --line:rgba(43,40,35,0.1);
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--paper-2); color:var(--ink); font-family:'Inter','Zen Maru Gothic',sans-serif; -webkit-font-smoothing:antialiased; }
+  a{ color:inherit; text-decoration:none; }
+
+  header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:60;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:1.3rem 6vw;
+    background:rgba(255,255,255,0.92); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .brand{ font-family:'Sacramento',cursive; font-size:1.9rem; color:var(--ink); }
+  nav.links{ display:flex; gap:1.8rem; }
+  nav.links a{ font-size:0.78rem; letter-spacing:0.08em; color:var(--ink-soft); transition:color .2s; }
+  nav.links a:hover{ color:var(--ink); }
+  .nav-toggle{ display:none; background:none; border:none; font-size:1.3rem; color:var(--ink); cursor:pointer; }
+  @media(max-width:680px){
+    nav.links{ position:absolute; top:100%; left:0; right:0; background:#fff; flex-direction:column; align-items:center; gap:1.2rem; padding:1.6rem 0 2rem; display:none; border-bottom:1px solid var(--line); }
+    nav.links.open{ display:flex; }
+    .nav-toggle{ display:block; }
+  }
+
+  .page-header{ padding:14vh 6vw 5vh; max-width:1100px; margin:0 auto; }
+  .page-header h1{ font-family:'Permanent Marker',cursive; font-weight:400; font-size:clamp(2rem,8vw,4rem); color:var(--ink); opacity:0.2; letter-spacing:0.04em; }
+
+  .torn{ position:relative; z-index:2; height:40px; margin-top:-1px;
+    clip-path:polygon(0% 100%,3% 38%,6% 70%,10% 25%,14% 60%,18% 15%,23% 55%,28% 10%,33% 50%,38% 18%,43% 62%,48% 12%,53% 48%,58% 20%,63% 58%,68% 14%,73% 52%,78% 22%,83% 60%,88% 16%,93% 50%,97% 28%,100% 45%,100% 100%); }
+  .torn.to-paper{ background:var(--paper); }
+  .torn.to-white{ background:var(--paper-2); }
+
+  .cat-section{ padding:6vh 6vw 5vh; background:var(--paper-2); }
+  .cat-section.alt{ background:var(--paper); }
+  .cat-inner{ max-width:1100px; margin:0 auto; }
+  .cat-label{ font-size:clamp(1.2rem,3.5vw,2rem); font-weight:300; letter-spacing:0.14em; color:rgba(43,40,35,0.2); margin-bottom:2rem; }
+
+  .works-table{ width:100%; border-collapse:collapse; }
+  .works-table tr{ border-top:1px solid var(--line); transition:background .15s; }
+  .works-table tr:last-child{ border-bottom:1px solid var(--line); }
+  .works-table tr:hover{ background:rgba(43,40,35,0.03); }
+  .works-table td{ padding:1rem 0.8rem; font-size:0.88rem; vertical-align:middle; }
+  .col-year{ width:4em; font-size:0.74rem; color:var(--ink-soft); font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .col-artist{ font-weight:500; width:22%; }
+  .col-title{ width:44%; }
+  .col-role{ width:30%; }
+  .note-inline{ font-size:0.72rem; color:var(--ink-soft); margin-left:0.5rem; }
+  .tag{ display:inline-block; font-size:0.66rem; letter-spacing:0.03em; border:1px solid rgba(43,40,35,0.2); border-radius:999px; padding:0.12rem 0.5rem; margin-right:0.25rem; margin-bottom:0.2rem; white-space:nowrap; }
+  .note-inline{ font-size:0.72rem; color:var(--ink-soft); margin-left:0.4rem; }
+  @media(max-width:680px){
+    .col-year{ width:3.2em; font-size:0.68rem; }
+    .col-artist{ width:28%; }
+    .col-title{ width:40%; }
+    .col-role{ width:28%; }
+    .works-table td{ padding:0.8rem 0.3rem; font-size:0.78rem; }
+  }
+
+  footer{ text-align:center; padding:3rem 6vw 2.2rem; background:var(--paper-2); }
+  footer .tagline{ font-family:'Caveat',cursive; font-size:1.4rem; color:var(--ink-soft); margin-bottom:1.2rem; }
+  footer .socials{ display:flex; justify-content:center; gap:1.5rem; margin-bottom:1rem; font-size:0.95rem; color:var(--ink-soft); }
+  footer .socials a:hover{ color:var(--ink); }
+  footer .socials .soon-icon{ opacity:0.4; cursor:default; }
+  footer .copy{ font-size:0.68rem; color:var(--ink-soft); }
+  :focus-visible{ outline:2px solid var(--sage-deep); outline-offset:2px; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="index.html">Fumiya Taguchi</a>
+  <button class="nav-toggle" id="navToggle" aria-label="メニュー">☰</button>
+  <nav class="links" id="navLinks">
+    <a href="index.html#works">WORKS</a>
+    <a href="index.html#about">ABOUT</a>
+    <a href="index.html#services">SERVICES</a>
+    <a href="index.html#contact">CONTACT</a>
+  </nav>
+</header>
+
+<div class="page-header">
+  <h1>W O R K S</h1>
+</div>
+
+<!-- COMPOSE & ARRANGE -->
+<section class="cat-section">
+  <div class="cat-inner">
+    <p class="cat-label">C O M P O S E &nbsp;&amp;&nbsp; A R R A N G E</p>
+    <table class="works-table">
+      <tr>
+        <td class="col-year">2025</td>
+        <td class="col-artist">maison de Queen</td>
+        <td class="col-title">「Proud Puppet」</td>
+        <td class="col-role"><span class="tag">作曲</span><span class="tag">アレンジ</span><span class="tag">ギター</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2024</td>
+        <td class="col-artist">綾野ましろ</td>
+        <td class="col-title">「Line of Fate」</td>
+        <td class="col-role"><span class="tag">作曲</span><span class="tag">アレンジ</span><span class="tag">ギター</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2024</td>
+        <td class="col-artist">神野りょう</td>
+        <td class="col-title">「焔の記憶」</td>
+        <td class="col-role"><span class="tag">作曲</span><span class="tag">アレンジ</span><span class="tag">ギター</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2024</td>
+        <td class="col-artist">藍井エイル</td>
+        <td class="col-title">「空のカタチ」</td>
+        <td class="col-role"><span class="tag">作曲</span><span class="tag">ギター</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2023</td>
+        <td class="col-artist">倉坂くるる</td>
+        <td class="col-title">「BREAK OUT」</td>
+        <td class="col-role"><span class="tag">作曲</span><span class="tag">アレンジ</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2023</td>
+        <td class="col-artist">倉坂くるる</td>
+        <td class="col-title">「PRINCESS♡RIDER」</td>
+        <td class="col-role"><span class="tag">作曲</span><span class="tag">アレンジ</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2022</td>
+        <td class="col-artist">Sifar</td>
+        <td class="col-title">「wishes fall」</td>
+        <td class="col-role"><span class="tag">アレンジ</span><span class="tag">ギター</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2022</td>
+        <td class="col-artist">Sifar</td>
+        <td class="col-title">「notion of you」</td>
+        <td class="col-role"><span class="tag">アレンジ</span><span class="tag">ギター</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2019</td>
+        <td class="col-artist">nonoc</td>
+        <td class="col-title">「star*frost」<span class="note-inline">彼方のアストラ OP</span></td>
+        <td class="col-role"><span class="tag">作曲</span><span class="tag">アレンジ</span><span class="tag">ギター</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2019</td>
+        <td class="col-artist">nonoc</td>
+        <td class="col-title">「Lucid Dream」</td>
+        <td class="col-role"><span class="tag">作曲</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2019</td>
+        <td class="col-artist">nonoc</td>
+        <td class="col-title">「Hollow Veil」<span class="note-inline">異世界かるてっと ED</span></td>
+        <td class="col-role"><span class="tag">作曲</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2018</td>
+        <td class="col-artist">綾野ましろ</td>
+        <td class="col-title">「Unleash」</td>
+        <td class="col-role"><span class="tag">アレンジ</span><span class="tag">ギター</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2018</td>
+        <td class="col-artist">綾野ましろ</td>
+        <td class="col-title">「ECHOES」</td>
+        <td class="col-role"><span class="tag">アレンジ</span><span class="tag">ギター</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2018</td>
+        <td class="col-artist">綾野ましろ</td>
+        <td class="col-title">「MATROSKA」</td>
+        <td class="col-role"><span class="tag">アレンジ</span><span class="tag">ギター</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2018</td>
+        <td class="col-artist">綾野ましろ</td>
+        <td class="col-title">「LAST FUTURE」</td>
+        <td class="col-role"><span class="tag">アレンジ</span><span class="tag">ギター</span></td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<div class="torn to-paper"></div>
+
+<!-- LIVE SUPPORT -->
+<section class="cat-section alt">
+  <div class="cat-inner">
+    <p class="cat-label">L I V E &nbsp; S U P P O R T</p>
+    <table class="works-table">
+      <tr>
+        <td class="col-year">2026</td>
+        <td class="col-artist">峯田茉優</td>
+        <td class="col-title">1st ONE MAN LIVE「LAUNCH」</td>
+        <td class="col-role"><span class="tag">Guitar</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2025</td>
+        <td class="col-artist">藍井エイル</td>
+        <td class="col-title">「Eir's day 2025 ー藍い夏祭りー」</td>
+        <td class="col-role"><span class="tag">Guitar</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2025</td>
+        <td class="col-artist">藍井エイル</td>
+        <td class="col-title">Eir Aoi「BLUE FLAiR」海外公演</td>
+        <td class="col-role"><span class="tag">Guitar</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2021</td>
+        <td class="col-artist">綾野ましろ</td>
+        <td class="col-title">「LIVE CHRONICLES -STUDIO LIVE STREAMING-」</td>
+        <td class="col-role"><span class="tag">Guitar</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2021</td>
+        <td class="col-artist">nonoc</td>
+        <td class="col-title">Appearance 札幌</td>
+        <td class="col-role"><span class="tag">Guitar</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2021</td>
+        <td class="col-artist">綾野ましろ</td>
+        <td class="col-title">Appearance 横浜</td>
+        <td class="col-role"><span class="tag">Guitar</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2021</td>
+        <td class="col-artist">綾野ましろ</td>
+        <td class="col-title">モアザンヘヴン35 〜10th Anniversary Part3〜</td>
+        <td class="col-role"><span class="tag">Guitar</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2020</td>
+        <td class="col-artist">綾野ましろ</td>
+        <td class="col-title">LIVE 2020「Re:Alive」</td>
+        <td class="col-role"><span class="tag">Guitar</span></td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<div class="torn to-white"></div>
+
+<!-- OTHER -->
+<section class="cat-section">
+  <div class="cat-inner">
+    <p class="cat-label">O T H E R</p>
+    <table class="works-table">
+      <tr>
+        <td class="col-year">2025</td>
+        <td class="col-artist">藍井エイル</td>
+        <td class="col-title">ライブ SE 制作</td>
+        <td class="col-role"><span class="tag">SE制作</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2023</td>
+        <td class="col-artist">BUMP ドラマ「令和JKと平成ギャル」</td>
+        <td class="col-title">音楽担当</td>
+        <td class="col-role"><span class="tag">音楽制作</span></td>
+      </tr>
+      <tr>
+        <td class="col-year">2023</td>
+        <td class="col-artist">AIR-G'(FM北海道)「風越星名 V*V avenue」</td>
+        <td class="col-title">番組テーマ曲</td>
+        <td class="col-role"><span class="tag">音楽制作</span></td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<div class="torn to-paper"></div>
+
+<footer>
+  <p class="tagline">Music That Leaves Something Behind.</p>
+  <div class="socials">
+    <a href="mailto:contact@fum1z0music.com" aria-label="Email">✉</a>
+    <a href="https://x.com/fum1z0" target="_blank" rel="noopener" aria-label="X">✕</a>
+    <span class="soon-icon" title="Instagram - Coming Soon">◎</span>
+  </div>
+  <p class="copy">© 2026 Fumiya Taguchi All Rights Reserved.</p>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', ()=> links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=> links.classList.remove('open'));
+  });
+</script>
+</body>
+</html>
